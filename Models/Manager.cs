@@ -10,5 +10,6 @@ namespace WindowsFormsApp1.Models
     {
         public static List<Customer> Customers = new List<Customer>();
         public static List<Item> Items = new List<Item>();
+        public static Customer CurrentCustomer = new Customer("Adam Brown", 100.0f);
     }
 }

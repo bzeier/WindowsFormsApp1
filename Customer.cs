@@ -11,9 +11,12 @@ namespace WindowsFormsApp1
     {
         public string Name { get; set; }
         public int Id { get; set; }
-        public Customer(string name) {
+        public float Cash { get; set; }
+        public Customer(string name, float cash)
+        {
             this.Name = name;
-            this.Id = Manager.Customers.Count+1;
+            this.Id = Manager.Customers.Count + 1;
+            this.Cash = cash;
         }
     }
 }

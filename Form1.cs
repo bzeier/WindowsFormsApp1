@@ -30,6 +30,16 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            float total = 0.0f;
+            foreach (Item item in Manager.Items)
+            {
+                total += item.Price * item.Quantity;
+            }
+            if (Manager.CurrentCustomer.Cash >= total)
+            {
+                Manager.CurrentCustomer.Cash = Manager.CurrentCustomer.Cash-total;
+                Manager.Items.Clear();
+            }
             UpdateListbox();
         }
 
@@ -40,6 +50,11 @@ namespace WindowsFormsApp1
 
         private void UpdateListbox()
         {
+            label9.Text = (Manager.CurrentCustomer.Name).ToString();
+            label8.Text = (Manager.CurrentCustomer.Cash).ToString() + "$";
+
+
+
             listBox1.Items.Clear();
             float total = 0.0f;
             foreach (Item item in Manager.Items)
@@ -130,6 +145,22 @@ namespace WindowsFormsApp1
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Manager.Items.Clear();
+            UpdateListbox();
         }
     }
 }
