@@ -69,6 +69,12 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            foreach (Item item in Manager.Items)
+            {
+                if (item.Name.ToLower() == textBox1.Text.ToLower()) return;
+            }
+
+
             string name = textBox1.Text;
             float price = float.Parse(textBox2.Text);
             Manager.Items.Add(new Item(name, price));
