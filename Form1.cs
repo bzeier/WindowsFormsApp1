@@ -74,9 +74,19 @@ namespace WindowsFormsApp1
                 if (item.Name.ToLower() == textBox1.Text.ToLower()) return;
             }
 
+            if (textBox2.Text == "") return;
+
 
             string name = textBox1.Text;
-            float price = float.Parse(textBox2.Text);
+            float price;
+            try
+            {
+                price = float.Parse(textBox2.Text);
+            }
+            catch {
+                Console.WriteLine("Invalid price input");
+                return;
+            }
             Manager.Items.Add(new Item(name, price));
             UpdateListbox();
         }
