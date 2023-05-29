@@ -44,8 +44,8 @@ namespace WindowsFormsApp1
             float total = 0.0f;
             foreach (Item item in Manager.Items)
             {
-                listBox1.Items.Add(item.Name + "|" + item.Price);
-                total += item.Price;
+                listBox1.Items.Add(item.Quantity + "   | " + item.Name + " | " + item.Price * item.Quantity);
+                total += item.Price*item.Quantity;
             }
 
             label6.Text = total + "$";
@@ -73,11 +73,6 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (Item item in Manager.Items)
-            {
-                if (item.Name.ToLower() == textBox1.Text.ToLower()) return;
-            }
-
             if (textBox2.Text == "") return;
 
 
@@ -91,6 +86,20 @@ namespace WindowsFormsApp1
                 Console.WriteLine("Invalid price input");
                 return;
             }
+
+            int i = 0;
+            foreach (Item item in Manager.Items)
+            {
+                if (item.Name.ToLower() == textBox1.Text.ToLower()) {
+                    Manager.Items[i].Quantity += 1;
+                    UpdateListbox();
+                    return;
+                }
+                i++;
+            }
+
+
+
             Manager.Items.Add(new Item(name, price));
             UpdateListbox();
         }

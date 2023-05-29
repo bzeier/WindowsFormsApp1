@@ -11,8 +11,10 @@ namespace WindowsFormsApp1.Models
         public Item(string name, float price) {
             this.Name = name;
             this.Price = price;
+            this.Quantity = 1;
         }
         public string Name { get; set; }
         public float Price { get; set; }
+        public int Quantity { get; set; }
     }
 }
