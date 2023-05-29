@@ -90,5 +90,28 @@ namespace WindowsFormsApp1
             Manager.Items.Add(new Item(name, price));
             UpdateListbox();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            foreach (Item item in Manager.Items)
+            {
+                if (item.Name.ToLower() == textBox1.Text.ToLower())
+                {
+                    try
+                    {
+                        listBox1.Items.RemoveAt(i);
+                        Manager.Items.RemoveAt(i);
+                    }
+                    catch
+                    {
+
+                    }
+                    return;
+                }
+                i++;
+            }
+            UpdateListbox();
+        }
     }
 }
