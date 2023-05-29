@@ -19,11 +19,10 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
-            Item item = new Item();
             //List<Customer> Customers = new List<Customer>();
-            Manager.Customers.Add(new Customer("John"));
-            Manager.Customers.Add(new Customer("Daniel"));
-            Manager.Customers.Add(new Customer("Brandon"));
+            //Manager.Customers.Add(new Customer("John"));
+            //Manager.Customers.Add(new Customer("Daniel"));
+            //Manager.Customers.Add(new Customer("Brandon"));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

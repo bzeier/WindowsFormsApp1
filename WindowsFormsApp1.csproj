@@ -55,7 +55,6 @@
     </Compile>
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Manager.cs" />
-    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

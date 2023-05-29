@@ -8,6 +8,11 @@ namespace WindowsFormsApp1.Models
 {
     internal class Item
     {
-        string Name = "item name";
+        public Item(string name, float price) {
+            this.Name = name;
+            this.Price = price;
+        }
+        public string Name { get; set; }
+        public float Price { get; set; }
     }
 }

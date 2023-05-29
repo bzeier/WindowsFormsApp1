@@ -41,10 +41,38 @@ namespace WindowsFormsApp1
         private void UpdateListbox()
         {
             listBox1.Items.Clear();
-            foreach (Customer customer in Manager.Customers)
+            foreach (Item item in Manager.Items)
             {
-                listBox1.Items.Add(customer.Id + "|" + customer.Name);
+                listBox1.Items.Add(item.Name + "|" + item.Price);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string name = textBox1.Text;
+            float price = float.Parse(textBox2.Text);
+            Manager.Items.Add(new Item(name, price));
+            UpdateListbox();
         }
     }
 }
