@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp1
 {
@@ -45,6 +46,12 @@ namespace WindowsFormsApp1
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ListBox box = (ListBox)sender;
+            Item item = Manager.Items.ElementAt(box.SelectedIndex);
+            textBox1.Text = item.Name;
+            textBox2.Text = item.Price.ToString();
+
+
             UpdateListbox();//
         }
 
