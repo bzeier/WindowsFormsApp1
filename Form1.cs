@@ -41,10 +41,14 @@ namespace WindowsFormsApp1
         private void UpdateListbox()
         {
             listBox1.Items.Clear();
+            float total = 0.0f;
             foreach (Item item in Manager.Items)
             {
                 listBox1.Items.Add(item.Name + "|" + item.Price);
+                total += item.Price;
             }
+
+            label6.Text = total + "$";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -112,6 +116,11 @@ namespace WindowsFormsApp1
                 i++;
             }
             UpdateListbox();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
